@@ -1,147 +1,251 @@
 <!DOCTYPE html>
-<html>
-<head>
-<title>ExoMy Malaysia</title>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ExoMy Malaysia</title>
 
 <style>
 
-body{
+*{
 margin:0;
 padding:0;
-background:#0b0b0b;
+box-sizing:border-box;
+}
+
+body{
+font-family:Arial,sans-serif;
+background:#050505;
 color:white;
-font-family:Arial, sans-serif;
-line-height:1.8;
+overflow-x:hidden;
 }
 
-.header{
+/* HERO */
+
+.hero{
+min-height:100vh;
+background:
+linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.85)),
+url('175903.jpg');
+background-size:cover;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
 text-align:center;
-padding:40px 20px;
-background:linear-gradient(180deg,#111,#000);
+padding:40px;
 }
 
-.logo{
-width:90%;
+.hero-content{
 max-width:900px;
-border-radius:20px;
-box-shadow:0 0 30px rgba(0,255,153,0.2);
 }
 
-.title{
-font-size:60px;
-font-weight:bold;
-margin-top:30px;
+.hero h1{
+font-size:90px;
 color:#00ff99;
+margin-bottom:20px;
+text-shadow:0 0 20px rgba(0,255,153,0.5);
 }
 
-.subtitle{
-font-size:24px;
-color:#cccccc;
-margin-top:10px;
+.hero h2{
+font-size:35px;
+margin-bottom:20px;
+color:#ffffff;
 }
 
-.slogan{
-font-size:28px;
-margin-top:20px;
-color:#00ff99;
+.hero p{
+font-size:22px;
+line-height:1.8;
+color:#dddddd;
+margin-bottom:30px;
+}
+
+.button{
+display:inline-block;
+padding:18px 40px;
+background:#00ff99;
+color:black;
+text-decoration:none;
 font-weight:bold;
+border-radius:12px;
+font-size:20px;
+transition:0.3s;
 }
+
+.button:hover{
+background:white;
+transform:scale(1.05);
+}
+
+/* SECTION */
 
 .section{
-max-width:1000px;
+padding:90px 25px;
+max-width:1300px;
 margin:auto;
-padding:50px 25px;
 }
 
-.section h2{
+.section-title{
+font-size:50px;
+text-align:center;
+margin-bottom:25px;
+color:#00ff99;
+}
+
+.section-text{
+font-size:21px;
+line-height:1.9;
+text-align:center;
+max-width:1000px;
+margin:auto;
+color:#cccccc;
+}
+
+/* CARDS */
+
+.cards{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:25px;
+margin-top:60px;
+}
+
+.card{
+background:#111111;
+padding:35px;
+border-radius:20px;
+width:320px;
+transition:0.3s;
+border:1px solid #222;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 25px rgba(0,255,153,0.15);
+border:1px solid #00ff99;
+}
+
+.card h3{
+font-size:28px;
+margin-bottom:15px;
+color:#00ff99;
+}
+
+.card p{
+font-size:18px;
+line-height:1.8;
+color:#cccccc;
+}
+
+/* SPECIES GRID */
+
+.species-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+margin-top:50px;
+}
+
+.species-box{
+background:#101010;
+padding:30px;
+border-radius:18px;
+text-align:center;
+transition:0.3s;
+}
+
+.species-box:hover{
+transform:scale(1.03);
+background:#161616;
+}
+
+.species-box h3{
+font-size:26px;
+margin-bottom:15px;
+color:#00ff99;
+}
+
+.species-box p{
+font-size:18px;
+color:#bbbbbb;
+line-height:1.7;
+}
+
+/* COMMUNITY */
+
+.community{
+background:#0c0c0c;
+border-top:1px solid #222;
+border-bottom:1px solid #222;
+}
+
+/* FOOTER */
+
+.footer{
+padding:60px 20px;
+text-align:center;
+background:black;
+}
+
+.footer h2{
 font-size:40px;
 color:#00ff99;
 margin-bottom:20px;
 }
 
-.section p{
+.footer p{
 font-size:20px;
-color:#dddddd;
+color:#aaaaaa;
+line-height:1.8;
 }
 
-.highlight{
-color:#00ff99;
-font-weight:bold;
-}
-
-.card-container{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:20px;
-margin-top:40px;
-}
-
-.card{
-background:#151515;
-padding:25px;
-border-radius:20px;
-width:280px;
-box-shadow:0 0 20px rgba(0,255,153,0.1);
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-5px);
-}
-
-.card h3{
-color:#00ff99;
-font-size:24px;
-}
-
-.card p{
-font-size:18px;
-}
-
-.footer{
-text-align:center;
-padding:40px 20px;
-background:#050505;
-font-size:18px;
-color:#999999;
-margin-top:50px;
-}
-
-.button{
-display:inline-block;
+.socials{
 margin-top:30px;
-padding:15px 35px;
+}
+
+.socials a{
+display:inline-block;
+margin:10px;
+padding:15px 25px;
+background:#111;
+color:white;
+text-decoration:none;
+border-radius:10px;
+transition:0.3s;
+border:1px solid #222;
+}
+
+.socials a:hover{
 background:#00ff99;
 color:black;
-text-decoration:none;
-border-radius:12px;
-font-weight:bold;
-font-size:20px;
 }
 
-.button:hover{
-background:white;
-}
+/* MOBILE */
 
 @media(max-width:768px){
 
-.title{
-font-size:42px;
+.hero h1{
+font-size:55px;
 }
 
-.subtitle{
-font-size:20px;
+.hero h2{
+font-size:28px;
 }
 
-.section h2{
-font-size:32px;
+.hero p{
+font-size:19px;
 }
 
-.section p{
-font-size:18px;
+.section-title{
+font-size:38px;
+}
+
+.section-text{
+font-size:19px;
 }
 
 }
@@ -152,129 +256,197 @@ font-size:18px;
 
 <body>
 
-<div class="header">
+<!-- HERO -->
 
-<img src="175903.jpg" class="logo">
+<section class="hero">
 
-<div class="title">EXOMY</div>
+<div class="hero-content">
 
-<div class="subtitle">
-Exotic Pet Community Malaysia
-</div>
+<h1>EXOMY</h1>
 
-<div class="slogan">
+<h2>Exotic Pet Community Malaysia</h2>
+
+<p>
 Berhobi dengan Selamat dan Berilmu
-</div>
+</p>
 
-<a class="button" href="#">
-JOIN EXOMY COMMUNITY
+<p>
+A Malaysian exotic pet community focused on education, responsibility, animal welfare, verified information, and strengthening the hobby through knowledge and unity.
+</p>
+
+<a href="#" class="button">
+JOIN EXOMY
 </a>
 
 </div>
 
-<div class="section">
+</section>
 
-<h2>About ExoMy</h2>
+<!-- ABOUT -->
 
-<p>
-<span class="highlight">ExoMy</span> is a Malaysian exotic pet community built to unite hobbyists, keepers, breeders, rescuers, educators, and animal lovers from all backgrounds under one passion:
-<strong>responsible exotic pet keeping.</strong>
+<section class="section">
+
+<h2 class="section-title">
+About ExoMy
+</h2>
+
+<p class="section-text">
+
+ExoMy is a growing Malaysian exotic pet community bringing together hobbyists, breeders, keepers, rescuers, educators, and animal lovers from all backgrounds.
+
+Built on the values of responsibility, ethics, knowledge, and respect for animal welfare, ExoMy promotes safer and more educated exotic pet keeping culture in Malaysia.
+
+From reptiles and amphibians to birds, arachnids, mammals, aquatic species, and invertebrates, ExoMy celebrates the beauty and diversity of exotic animals while encouraging proper care and responsible ownership.
+
 </p>
 
-<p>
-Founded with the spirit of education, awareness, ethics, and community growth, ExoMy promotes a safer and more knowledgeable hobby culture in Malaysia. From reptiles and amphibians to birds, arachnids, mammals, aquatic species, and invertebrates, ExoMy celebrates the incredible diversity of exotic animals while emphasizing proper care, welfare, legality, and responsible ownership.
-</p>
-
-<p>
-ExoMy is not just a hobby page. It is a growing movement focused on:
-</p>
-
-<div class="card-container">
+<div class="cards">
 
 <div class="card">
 <h3>Education</h3>
 <p>
-Sharing verified care guides, species information, handling knowledge, husbandry standards, and awareness content for beginners and experienced keepers alike.
+Verified species information, care guides, awareness posters, and husbandry knowledge for both beginners and experienced keepers.
 </p>
 </div>
 
 <div class="card">
 <h3>Community</h3>
 <p>
-Connecting Malaysian exotic pet enthusiasts through positivity, support, inclusiveness, and shared passion.
+Building a supportive Malaysian exotic pet community based on positivity, inclusiveness, passion, and mutual respect.
 </p>
 </div>
 
 <div class="card">
 <h3>Responsibility</h3>
 <p>
-Encouraging ethical keeping, legal awareness, animal welfare, conservation respect, and safe hobby practices.
-</p>
-</div>
-
-<div class="card">
-<h3>Verified Information</h3>
-<p>
-Producing detailed educational posters and verified species series to reduce misinformation in the exotic pet hobby.
-</p>
-</div>
-
-<div class="card">
-<h3>Malaysia Focused</h3>
-<p>
-Highlighting local species, local laws, local community culture, and the Malaysian exotic pet scene.
-</p>
-</div>
-
-<div class="card">
-<h3>Future Vision</h3>
-<p>
-Building one of the strongest and most respected exotic pet communities in Malaysia through knowledge, creativity, and unity.
+Promoting ethical ownership, legal awareness, animal welfare, and safe hobby practices for the future of the community.
 </p>
 </div>
 
 </div>
 
+</section>
+
+<!-- SPECIES -->
+
+<section class="section">
+
+<h2 class="section-title">
+Exotic Species
+</h2>
+
+<div class="species-grid">
+
+<div class="species-box">
+<h3>Reptiles</h3>
+<p>
+Snakes, geckos, tortoises, monitors, skinks, chameleons, and many more.
+</p>
 </div>
 
-<div class="section">
-
-<h2>ExoMy Mission</h2>
-
+<div class="species-box">
+<h3>Amphibians</h3>
 <p>
-To inspire Malaysians to enjoy the exotic pet hobby with knowledge, compassion, responsibility, and respect for both animals and the community.
+Frogs, salamanders, axolotls, and unique aquatic species.
 </p>
+</div>
 
+<div class="species-box">
+<h3>Birds</h3>
 <p>
-ExoMy believes that education creates better keepers, stronger communities, and healthier animals.
+Parrots, exotic birds, aviary species, and tropical companions.
 </p>
+</div>
+
+<div class="species-box">
+<h3>Arachnids</h3>
+<p>
+Tarantulas, scorpions, jumping spiders, and fascinating invertebrates.
+</p>
+</div>
+
+<div class="species-box">
+<h3>Mammals</h3>
+<p>
+Sugar gliders, hedgehogs, ferrets, and other unique companion animals.
+</p>
+</div>
+
+<div class="species-box">
+<h3>Aquatics</h3>
+<p>
+Rare fish, shrimp, aquatic ecosystems, and exotic aquatic habitats.
+</p>
+</div>
 
 </div>
 
-<div class="section">
+</section>
 
-<h2>ExoMy Motto</h2>
+<!-- COMMUNITY -->
 
-<p>
-<strong>
+<section class="section community">
+
+<h2 class="section-title">
+ExoMy Mission
+</h2>
+
+<p class="section-text">
+
+ExoMy believes education creates better keepers, healthier animals, and stronger communities.
+
+Our mission is to inspire Malaysians to enjoy the exotic pet hobby responsibly while respecting animal welfare, conservation, legality, and ethical keeping standards.
+
 Different Pets, One Passion, Strong Together.
-</strong>
+
+</p>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+<h2>EXOMY</h2>
+
+<p>
+Exotic Pet Community Malaysia
 </p>
 
 <p>
-No matter the species, we are united by our love for exotic animals and our commitment to responsible keeping.
+Berhobi dengan Selamat dan Berilmu
 </p>
 
+<div class="socials">
+
+<a href="#">
+Facebook
+</a>
+
+<a href="#">
+Instagram
+</a>
+
+<a href="#">
+Threads
+</a>
+
+<a href="#">
+Telegram
+</a>
+
+<a href="#">
+TikTok
+</a>
+
 </div>
 
-<div class="footer">
+<p style="margin-top:40px;">
+© 2026 EXOMY Malaysia
+</p>
 
-EXOMY © 2026<br>
-Exotic Pet Community Malaysia<br><br>
-
-Berhobi dengan Selamat dan Berilmu
-
-</div>
+</footer>
 
 </body>
+
 </html>
